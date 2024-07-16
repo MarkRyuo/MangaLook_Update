@@ -32,7 +32,7 @@ async function signInWithGoogle() {
     }
 }
 
-// Function to handle form submission and save data to Firestore
+// Function to handle form submission and save data to Firestore Database
 async function handleFormSubmit(event) {
     event.preventDefault();
 
