@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,6 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
 
 // Function to handle Google sign-in
 async function signInWithGoogle() {
@@ -30,10 +32,35 @@ async function signInWithGoogle() {
     }
 }
 
-// Add event listener to the Google sign-in button
+// Function to handle form submission and save data to Firestore
+async function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        await addDoc(collection(db, 'people'), {
+            email: email,
+            firstname: firstName,
+            lastname: lastName,
+            password: password
+        });
+        console.log('Document successfully written!');
+        window.location.href = 'main.html'; // Redirect to dashboard or desired page
+    } catch (error) {
+        console.error('Error writing document: ', error);
+    }
+}
+
+// Add event listeners
 document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('.btn-google').addEventListener('click', (event) => {
         event.preventDefault();
         signInWithGoogle();
     });
+
+    document.getElementById('signupForm').addEventListener('submit', handleFormSubmit);
 });
