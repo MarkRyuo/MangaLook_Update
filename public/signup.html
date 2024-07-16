@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Signup</title>
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <main class="signup-container">
+            <h1 class="heading-primary">Sign Up<span class="span-blue">.</span></h1>
+            <p class="text-mute">Enter your details to create a new account.</p>
+            <div class="signup-wrapper">
+                <a href="#" class="btn btn-google">
+                    <img src="https://img.icons8.com/fluency/48/000000/google-logo.png" />
+                    Sign Up with Google
+                </a>
+                <div class="line-breaker">
+                    <span class="line"></span>
+                    <span>or</span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            
+            <form class="signup-form" id="signupForm">
+                <label class="inp">
+                    <input type="text" class="input-text" id="firstName" placeholder="&nbsp;" required>
+                    <span class="label">First Name</span>
+                    <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                </label>
+
+                <label class="inp">
+                    <input type="text" class="input-text" id="lastName" placeholder="&nbsp;" required>
+                    <span class="label">Last Name</span>
+                    <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                </label>
+
+                <label class="inp">
+                    <input type="email" class="input-text" id="email" placeholder="&nbsp;" required>
+                    <span class="label">Email</span>
+                    <span class="input-icon"><i class="fa-solid fa-envelope"></i></span>
+                </label>
+
+                <label class="inp">
+                    <input type="password" class="input-text" id="password" placeholder="&nbsp;" required>
+                    <span class="label">Password</span>
+                    <span class="input-icon input-icon-password" data-password><i class="fa-solid fa-eye"></i></span>
+                </label>
+
+                <button class="btn btn-signup">Sign Up</button>
+            </form>
+            
+            <p class="text-mute">Already have an account? <a href="index.html">Log in</a></p>
+        </main>
+
+        <div class="welcome-container">
+            <div class="Imageas">
+                <h1 class="heading-secondary">Welcome to <span class="lg">MangaLook</span></h1>
+                <img class="imgg" src="/assets/Image/pngwing.com.png" alt="JJK Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
