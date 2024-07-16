@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/fireba
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore.js";
 
-// Your web app's Firebase configuration
+// web apps Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCFJCkkyzLMzem5KhdfTeqz9dRoJFoxz-Y",
     authDomain: "interactiveprogramming-acc6a.firebaseapp.com",
